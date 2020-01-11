@@ -1,0 +1,36 @@
+  /* Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        primaryStage.setTitle("Система діагностування багатоканатної шахтної підйомної машини");
+        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.show();*/
+
+        window = primaryStage;
+
+        Label label = new Label("Стан системи");
+
+
+        button1 = new Button();
+        button1.setText("Почати діагностику");
+        button1.setOnAction(event -> window.setScene(scene2));
+
+        VBox layout1 = new VBox(20);
+        layout1.getChildren().addAll(label, button1);
+        scene1 = new Scene(layout1, 200, 200);
+
+        button2 = new Button();
+        button2.setText("Відобразити графік");
+        button2.setOnAction(event -> System.out.println("Вторая сцена"));
+
+        StackPane layout2 = new StackPane();
+        layout2.getChildren().addAll(button2);
+        scene2 = new Scene(layout2, 400, 400);
+
+        window.setScene(scene1);
+        window.setTitle("DDDD");
+        window.show();
+
+       /* primaryStage.setTitle("Система діагностування багатоканатної шахтної підйомної машини");
+        StackPane layout = new StackPane();
+        layout.getChildren().add(button1);
+        Scene scene = new Scene(layout, 300, 250);
+        primaryStage.setScene(scene);
+        primaryStage.show();*/

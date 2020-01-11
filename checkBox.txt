@@ -1,0 +1,45 @@
+Stage window;
+    Scene scene, scene2;
+    Button button1, button2; 
+
+
+
+
+window = primaryStage;
+        window.setTitle("Система функціонального діагностування багатоканатної шахтної підйомної машини");
+
+        HBox topMenu = new HBox();
+        Button button1 = new Button("Авторизація");
+        Button button2 = new Button("Навчання");
+        Button button3 = new Button("Кластеризація");
+        Button button4 = new Button("Результати діагостування");
+        topMenu.getChildren().addAll(button1, button2, button3, button4);
+
+        BorderPane borderPane = new BorderPane();
+        borderPane.setTop(topMenu);
+
+
+        CheckBox checkBox1 = new CheckBox("Пошук оптимальної ієрархічної структури");
+        CheckBox checkBox2 = new CheckBox("Критерій Кульбака");
+        CheckBox checkBox3 = new CheckBox("Оптимізація СКД");
+        CheckBox checkBox4 = new CheckBox("Еще не знаю");
+
+        VBox vbox = new VBox(10);
+        vbox.setPadding(new Insets(20, 20,20,20));
+        vbox.getChildren().addAll(checkBox1, checkBox2, checkBox3, checkBox4, button2);
+        button2.setOnAction(e -> handleOption(checkBox1, checkBox2));
+
+        scene = new Scene( vbox, 400, 400);
+        window.setScene(scene);
+        window.show();
+    }
+
+    private void handleOption(CheckBox checkBox1, CheckBox checkBox2) {
+
+        if(checkBox1.isSelected()){
+            System.out.println("1");
+        }
+        if (checkBox2.isSelected()){
+            System.out.println("2");
+        }
+    }
